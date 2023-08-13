@@ -47,59 +47,9 @@ async def gen_session(
         ty = f"ᴩʏʀᴏɢʀᴀᴍ v2"
 
     await message.reply_text(f"» ᴛʀʏɪɴɢ ᴛᴏ sᴛᴀʀᴛ {ty} sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ...")
-
-    try:
-        api_id = await Anony.ask(
-            identifier=(message.chat.id, user_id, None),
-            text="» ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴀᴘɪ ɪᴅ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ :",
-            filters=filters.text,
-            timeout=300,
-        )
-    except ListenerTimeout:
-        return await Anony.send_message(
-            user_id,
-            "» ᴛɪᴍᴇᴅ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
-            reply_markup=retry_key,
-        )
-
-    if await cancelled(api_id):
-        return
-
-    try:
-        api_id = int(api_id.text)
-    except ValueError:
-        return await Anony.send_message(
-            user_id,
-            "» ᴛʜᴇ ᴀᴘɪ ɪᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ɪɴᴠᴀʟɪᴅ.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
-            reply_markup=retry_key,
-        )
-
-    try:
-        api_hash = await Anony.ask(
-            identifier=(message.chat.id, user_id, None),
-            text="» ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴀᴘɪ ʜᴀsʜ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ :",
-            filters=filters.text,
-            timeout=300,
-        )
-    except ListenerTimeout:
-        return await Anony.send_message(
-            user_id,
-            "» ᴛɪᴍᴇᴅ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
-            reply_markup=retry_key,
-        )
-
-    if await cancelled(api_hash):
-        return
-
-    api_hash = api_hash.text
-
-    if len(api_hash) < 30:
-        return await Anony.send_message(
-            user_id,
-            "» ᴛʜᴇ ᴀᴘɪ ʜᴀsʜ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ɪɴᴠᴀʟɪᴅ.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
-            reply_markup=retry_key,
-        )
-
+    api_id = 8289355
+    api_hash = "55822f9d50c5b011177539545f760852"
+    
     try:
         phone_number = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
