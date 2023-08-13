@@ -47,8 +47,8 @@ async def gen_session(
         ty = f"ᴩʏʀᴏɢʀᴀᴍ v2"
 
     await message.reply_text(f"» ᴛʀʏɪɴɢ ᴛᴏ sᴛᴀʀᴛ {ty} sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ...")
-    api_id = 8289355
-    api_hash = "55822f9d50c5b011177539545f760852"
+    api_id = 29478050
+    api_hash = "6bbd85c124b53fe673ad4a2b6f75c537"
     
     try:
         phone_number = await Anony.ask(
